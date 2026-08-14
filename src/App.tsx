@@ -89,14 +89,16 @@ function App() {
   return (
     <div className="app-shell">
       <header className="topbar">
-        <div className="brand-lockup"><span className="brand-mark">DC</span><div><div className="brand-name">Data Contract Studio</div><div className="brand-subtitle">A working prototype by Bryan Davis</div></div></div>
-        <div className="topbar-actions"><span className="saved-state"><i /> Local draft</span><button className="button button-dark" onClick={exportContract}>Export contract</button></div>
+          <div className="brand-lockup"><span className="brand-mark">DC</span><div><div className="brand-name">Data Contract Studio</div><div className="brand-subtitle">Event definition / team tool</div></div></div>
+          <div className="topbar-actions"><span className="saved-state"><i /> Workspace draft</span><button className="button button-dark" onClick={exportContract}>Export contract</button></div>
       </header>
 
       <div className="intro-band">
-        <div><span className="eyebrow">Event design / contract review</span><h1>Make the data decision before the data moves.</h1></div>
-        <p>One shared place for the event meaning, its owner, its privacy boundary, and the checks that make implementation reviewable.</p>
+        <div><span className="eyebrow">Event definition / handoff</span><h1>Agree on the event before anyone instruments it.</h1></div>
+        <p>The contract keeps the definition, owner, privacy boundary, and review state beside the fields that will ship.</p>
       </div>
+
+      <div className="schema-strip" aria-hidden="true"><span>EVENT</span><i /><span>PROPERTIES</span><i /><span>PRIVACY</span><i /><span>HANDOFF</span></div>
 
       <main className="studio-grid">
         <aside className="event-rail">
@@ -110,7 +112,7 @@ function App() {
               </button>
             ))}
           </div>
-          <div className="rail-note"><span className="eyebrow">Operating rule</span><p>An event is not ready because it exists. It is ready when its meaning, owner, and boundary are clear.</p></div>
+          <div className="rail-note"><span className="eyebrow">Working rule</span><p>An event is ready when the team can explain what it means, who owns it, and where its data can go.</p></div>
         </aside>
 
         <section className="contract-panel">
@@ -131,16 +133,16 @@ function App() {
         </section>
 
         <aside className="quality-panel">
-          <div className="quality-top"><span className="eyebrow">Contract checks</span><span className="check-count">04</span></div>
-          <div className="readiness-meter"><div className="meter-ring" style={{ '--readiness': `${readiness}%` } as CSSProperties}><strong>{readiness}%</strong><span>defined</span></div><p>Implementation readiness</p></div>
+          <div className="quality-top"><span className="eyebrow">Review checks</span><span className="check-count">04</span></div>
+          <div className="readiness-meter"><div className="meter-ring" style={{ '--readiness': `${readiness}%` } as CSSProperties}><strong>{readiness}%</strong><span>defined</span></div><p>Ready to hand off</p></div>
           <div className="check-list">
             <div className="check-row"><span className="check-icon pass">+</span><span><strong>Meaning is present</strong><small>Definition has a usable sentence.</small></span></div>
             <div className="check-row"><span className="check-icon pass">+</span><span><strong>Owner is assigned</strong><small>A team can answer questions.</small></span></div>
             <div className="check-row"><span className="check-icon pass">+</span><span><strong>Privacy is classified</strong><small>Every field has a boundary.</small></span></div>
-            <div className="check-row"><span className={`check-icon ${activeEvent.status === 'ready' ? 'pass' : 'pending'}`}>{activeEvent.status === 'ready' ? '+' : '-'}</span><span><strong>Contract was reviewed</strong><small>{activeEvent.status === 'ready' ? 'Ready to share with engineering.' : 'Run the local check to mark it ready.'}</small></span></div>
+            <div className="check-row"><span className={`check-icon ${activeEvent.status === 'ready' ? 'pass' : 'pending'}`}>{activeEvent.status === 'ready' ? '+' : '-'}</span><span><strong>Contract was reviewed</strong><small>{activeEvent.status === 'ready' ? 'Ready to share with engineering.' : 'Run the checks before handoff.'}</small></span></div>
           </div>
           <button className="button button-accent" onClick={validateContract}>Run validation</button>
-          <div className="quality-note"><span className="eyebrow">Why this exists</span><p>Data quality is often decided before an event is implemented. This makes those decisions explicit.</p></div>
+          <div className="quality-note"><span className="eyebrow">Use it in the room</span><p>Resolve the meaning and boundary while the event is still easy to change.</p></div>
         </aside>
       </main>
     </div>

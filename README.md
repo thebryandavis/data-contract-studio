@@ -1,18 +1,18 @@
 # Data Contract Studio
 
-A working prototype for defining product events, ownership, privacy, and validation before implementation.
+A shared workspace for agreeing on an event's meaning, owner, privacy boundary, and validation checks before engineering implements it.
 
-This explores a product question: can one shared event contract keep product, engineering, analytics, and privacy decisions aligned before data starts moving?
+I built this around a familiar team problem: an event can be easy to instrument and still be hard to explain six months later.
 
 ## What it demonstrates
 
 - Event and property definitions
 - Ownership and privacy classification
-- Validation checks and implementation readiness
-- Generated payload examples
-- A small contract export flow
+- Checks before handoff
+- A generated JSON contract
+- A small export flow for sharing the decision
 
-The examples are synthetic. The studio is a product experiment, not a replacement for a warehouse, schema registry, or governance program.
+The catalog uses representative events. The useful part is the conversation it makes possible before the event reaches production.
 
 ## Run it
 
@@ -21,6 +21,6 @@ npm install
 npm run dev
 ```
 
-## What remains unproven
+## Next question
 
-The next test would be whether teams actually use the contract before shipping an event, and whether that reduces broken tracking and ambiguous metrics later.
+Will a team use the contract before shipping an event, and does that reduce broken tracking and ambiguous metrics later?
