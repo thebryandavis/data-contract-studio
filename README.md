@@ -2,6 +2,8 @@
 
 A shared workspace for agreeing on an event's meaning, owner, privacy boundary, and validation checks before engineering implements it.
 
+[Open the live tool](https://data-contract-studio-production.up.railway.app) · [View the source](https://github.com/thebryandavis/data-contract-studio)
+
 I built this around a familiar team problem: an event can be easy to instrument and still be hard to explain six months later.
 
 ## What it demonstrates
